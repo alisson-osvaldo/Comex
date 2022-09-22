@@ -12,7 +12,7 @@ public class Cliente {
 	private String bairro;
 	private String cidade;
 	private String estado;
-	private static int cont = 0;
+	private static int cont = 1;
 	
 	public Cliente (String nome, String cpf, String telefone, String rua, String numero,
 					String complemento, String bairro, String cidade, String estado) {

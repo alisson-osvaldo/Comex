@@ -5,7 +5,7 @@ public class Pedido {
 	private int id;
 	private String data;
 	private Cliente cliente;
-	private static int cont = 0;
+	private static int cont = 1;
 	
 	public Pedido (String data, Cliente cliente) {
 		this.id = cont++;

@@ -10,7 +10,12 @@ public class Produto {
 	private double precoUnitario;
 	private int quantidadeEmEstoque;
 	private Categoria categoria;
+	private static int count = 1;
 	
+	
+	public Produto() {
+		this.id = count++;
+	}
 	
 	public double valorTotalEstoque() {
 		double total = this.getQuantidadeEmEstoque() * this.getPrecoUnitario();
@@ -25,9 +30,6 @@ public class Produto {
 	
 	public int getId() {
 		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
 	}
 	public String getNome() {
 		return nome;

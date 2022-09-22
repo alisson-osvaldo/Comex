@@ -3,26 +3,43 @@ package Comex;
 import java.util.ArrayList;
 
 public class MainPedido {
-
-	public static void main(String[] args) {
-		ArrayList<Pedido> pedidos = new ArrayList<Pedido>();
+	private static ArrayList<Pedido> pedidos = new ArrayList<Pedido>();
+	public static boolean chave;
+	
+	public static void main(String[] args) {		
 		
-		ClienteController.main(args);
+		//Inicializando
+		MainCliente.chave = true;
+		MainCliente.main(args);
 		
-		Cliente c1 = ClienteController.buscarCliente("Ana");
-		Cliente c2 = ClienteController.buscarCliente("Eli");
-		Cliente c3 = ClienteController.buscarCliente("Gabi");
+		Cliente c1 = MainCliente.buscarCliente("Ana");
+		Cliente c2 = MainCliente.buscarCliente("Eli");
+		Cliente c3 = MainCliente.buscarCliente("Gabi");
 		
 		Pedido p1 = new Pedido("10/09/2022", c1);
 		pedidos.add(p1);
 		
-		Pedido p2 = new Pedido("10/09/2022", c2);
+		Pedido p2 = new Pedido("10/01/2020", c2);
 		pedidos.add(p2);
 		
-		Pedido p3 = new Pedido("10/09/2022", c3);
+		Pedido p3 = new Pedido("05/12/1990", c3);
 		pedidos.add(p3);
 		
-		System.out.println(pedidos);
+		if (chave == false) {
+			System.out.println(pedidos);
+		}else {
+			chave = false;
+		}
+			
+	}
+	
+	public static Pedido BuscarPedido(int idPedido) {
+		for(Pedido pedidoCadastrado : pedidos) {
+			if(pedidoCadastrado.getId() == idPedido) {
+				return pedidoCadastrado;
+			}
+		}
+		return null;
 	}
 
 }

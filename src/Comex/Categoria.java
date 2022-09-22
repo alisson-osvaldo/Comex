@@ -5,9 +5,11 @@ public class Categoria {
 	private int id;
 	private String nome;
 	private String status;
+	private static int count = 1;
 	
 	public Categoria() {
 		this.status = "ATIVA";
+		this.id = count++;
 	}
 
 	public int getId() {

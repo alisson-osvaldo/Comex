@@ -3,9 +3,10 @@ import java.util.ArrayList;
 
 
 public class MainCliente {
+	private static ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+	public static boolean chave;
 	
 	public static void main(String[] args) {
-		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 		
 		Cliente c1 = new Cliente("Ana", "111", "9090123", "Rua Y", "123", "Apartamento", "Santa clara", "Curitiba","PR");
 		clientes.add(c1);
@@ -16,8 +17,23 @@ public class MainCliente {
 		Cliente c3 = new Cliente("Gabi", "333", "9958874", "Rua X", "789", "Apartamento", "Alto da glória", "Pato branco","PR");
 		clientes.add(c3);
 		
-		System.out.println(clientes);
 		
+		if (chave == false) {
+			System.out.println(clientes);
+		}else {
+			chave = false;
+		}
+				
+		
+	}
+	
+	public static Cliente buscarCliente(String nomec) {
+		for(Cliente clienteCadastrada : clientes) {
+			if(clienteCadastrada.getNome().equals(nomec)) {
+				return clienteCadastrada;
+			}
+		}
+		return null;
 	}
 		
 }

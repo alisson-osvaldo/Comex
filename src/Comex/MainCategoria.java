@@ -5,31 +5,33 @@ import java.util.ArrayList;
 
 public class MainCategoria {
 	private static ArrayList<Categoria> categorias = new ArrayList<Categoria>();
-	
+	public static boolean chave;
 	
 	public static void main(String[] args) {
 	    
-		Categoria informatica = new Categoria();
-		Categoria moveis 	  = new Categoria();
-		Categoria livros      = new Categoria();
+		Categoria c1 = new Categoria();
+		Categoria c2 = new Categoria();
+		Categoria c3 = new Categoria();
 		
-		informatica.setId(1);
-		informatica.setNome("Informática");
+		c1.setNome("Informática");
 		
-		moveis.setId(2);
-		moveis.setNome("Móveis");
-		moveis.setStatus("INATIVA");
+		c2.setNome("Móveis");
+		c2.setStatus("INATIVA");
 		
-		livros.setId(3);
-		livros.setNome("Livros");
+		c3.setId(3);
+		c3.setNome("Livros");
 		
 		
-		categorias.add(informatica);
-		categorias.add(moveis);
-		categorias.add(livros);
+		categorias.add(c1);
+		categorias.add(c2);
+		categorias.add(c3);
 
-		System.out.println(categorias);
 		
+		if (chave == false) {
+			System.out.println(categorias);
+		}else {
+			chave = false;
+		}
 		
 			
 	}
