@@ -4,11 +4,11 @@ public class Categoria {
 	
 	private int id;
 	private String nome;
-	private String status;
+	private StatusCategoria status;
 	private static int count = 1;
 	
 	public Categoria() {
-		this.status = "ATIVA";
+		this.status = StatusCategoria.ATIVA;
 		this.id = count++;
 	}
 
@@ -28,14 +28,14 @@ public class Categoria {
 		this.nome = nome;
 	}
 
-	public String getStatus() {
+	public StatusCategoria getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(StatusCategoria status) {
 		this.status = status;
 	}
-	
+
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub

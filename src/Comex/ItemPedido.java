@@ -2,7 +2,10 @@ package Comex;
 
 import java.text.NumberFormat;
 
-public class ItemPedido {
+import CalculadoraValorTotal.CalculadoraValorTotal;
+import CalculadoraValorTotal.ValorTotal;
+
+public class ItemPedido extends CalculadoraValorTotal implements ValorTotal {
 	
 	private int id;
 	private double precoUnitario; //Esse cara deve receber o valor na data do pedido

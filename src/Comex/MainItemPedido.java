@@ -16,7 +16,7 @@ public class MainItemPedido {
 		
 		ItemPedido p1 = new ItemPedido( 
 				MainProduto.BuscarProduto(1).getPrecoUnitario(), 
-				11, 
+				2, 
 				MainProduto.BuscarProduto(1), 
 				MainPedido.BuscarPedido(1), 
 				10, 

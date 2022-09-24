@@ -2,7 +2,11 @@ package Comex;
 
 import java.text.NumberFormat;
 
-public class Produto {
+import CalculadoraValorTotal.CalculadoraValorTotal;
+import CalculadoraValorTotal.ValorTotal;
+
+
+public class Produto extends CalculadoraValorTotal implements ValorTotal{
 	
 	private int id;
 	private String nome;
@@ -16,17 +20,6 @@ public class Produto {
 	public Produto() {
 		this.id = count++;
 	}
-	
-	public double valorTotalEstoque() {
-		double total = this.getQuantidadeEmEstoque() * this.getPrecoUnitario();
-		NumberFormat.getCurrencyInstance().format(total);
-		return total;
-	}
-	
-	public String calculaImposto(){	
-		return NumberFormat.getCurrencyInstance().format(getPrecoUnitario() * 0.4);
-	}
-	
 	
 	public int getId() {
 		return id;
@@ -62,6 +55,16 @@ public class Produto {
 		this.categoria = categoria;
 	}
 	
+	public double valorTotalEstoque() {
+		double total = this.getQuantidadeEmEstoque() * this.getPrecoUnitario();
+		NumberFormat.getCurrencyInstance().format(total);
+		return total;
+	}
+	
+	public String calculaImposto(){	
+		return NumberFormat.getCurrencyInstance().format(getPrecoUnitario() * 0.4);
+	}
+	
 	@Override
 	public String toString() {
 		return "\n Produto: \n" 
@@ -74,12 +77,18 @@ public class Produto {
 				+ " Valor Total em Estoque: " + valorTotalEstoque() + " \n"
 				+ " Imposto: " + calculaImposto() + "\n \n";
 	}
-	/*@Override
-	public String toString() {
-		return "Produto [id=" + id + ", nome=" + nome + ", descricao=" + descricao + ", precoUnitario=" + precoUnitario
-				+ ", quantidadeEmEstoque=" + quantidadeEmEstoque + ", categoria=" + categoria + ", valorTotalEstoque()="
-				+ valorTotalEstoque() + "]";
-	}*/
+
+
+
+
+
+
+
+
+
+
+
+		
 	
 	
 }

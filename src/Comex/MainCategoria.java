@@ -16,7 +16,7 @@ public class MainCategoria {
 		c1.setNome("Informática");
 		
 		c2.setNome("Móveis");
-		c2.setStatus("INATIVA");
+		c2.setStatus(StatusCategoria.INATIVA);
 		
 		c3.setId(3);
 		c3.setNome("Livros");
