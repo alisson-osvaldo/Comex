@@ -1,4 +1,4 @@
-package Comex;
+package br.com.comex.modelo;
 
 import java.text.NumberFormat;
 
@@ -17,8 +17,26 @@ public class Produto extends CalculadoraValorTotal implements ValorTotal{
 	private static int count = 1;
 	
 	
-	public Produto() {
-		this.id = count++;
+	public Produto(int id, String nome, double precoUnitario, int quantidadeEmEstoque, Categoria categoria) {
+		
+		if (id <= 0) {
+			throw new IllegalArgumentException("Error: Id deve ser maior que zero !!!"); 
+		} else if (nome.length() <= 5) {
+			throw new IllegalArgumentException("Error: nome deve ter mais que 5 caracteres !!! \n:");
+		} else if (precoUnitario <= 0) {
+			throw new IllegalArgumentException("Error: Preço Unitário igual ou menor que 0 !!!"); 
+		} else if (quantidadeEmEstoque <= 0) {
+			throw new IllegalArgumentException("Error: Quantidade em Estoque deve ser maior que zero !!!"); 
+		} else if (categoria == null ){
+			throw new IllegalArgumentException("Error: Categoria não pode ser NULL !!!"); 
+		} 
+		
+		//this.id = count++;
+		this.id = id;
+		this.nome = nome;
+		this.precoUnitario = precoUnitario;
+		this.quantidadeEmEstoque = quantidadeEmEstoque;
+		this.categoria = categoria;
 	}
 	
 	public int getId() {

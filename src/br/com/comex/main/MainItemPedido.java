@@ -1,6 +1,8 @@
-package Comex;
+package br.com.comex.main;
 
 import java.util.ArrayList;
+
+import br.com.comex.modelo.ItemPedido;
 
 public class MainItemPedido {
 

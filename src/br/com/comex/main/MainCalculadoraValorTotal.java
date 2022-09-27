@@ -1,20 +1,18 @@
-package CalculadoraValorTotal;
+package br.com.comex.main;
 
-import Comex.ItemPedido;
-import Comex.MainCategoria;
-import Comex.Produto;
+import br.com.comex.modelo.ItemPedido;
+import br.com.comex.modelo.Produto;
 
 public class MainCalculadoraValorTotal {
 
 	public static void main(String[] args){
 		
+		//Inicializando
+		MainCategoria.chave = true;
+		MainCategoria.main(args);
+
 		//Produto
-		Produto p1 = new Produto();
-	
-		p1.setNome("Notebook Samsung");
-		p1.setPrecoUnitario(3523.00);
-		p1.setQuantidadeEmEstoque(5);
-		p1.setCategoria(MainCategoria.vincularCategoria("Informática"));
+		Produto p1 = new Produto(1, "Notebook Samsung", 3523.00, 5, MainCategoria.vincularCategoria("Informática"));
 		
 		p1.calcula(p1.getPrecoUnitario(), p1.getQuantidadeEmEstoque());
 		

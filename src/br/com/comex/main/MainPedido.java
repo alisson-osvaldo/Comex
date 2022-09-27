@@ -1,6 +1,9 @@
-package Comex;
+package br.com.comex.main;
 
 import java.util.ArrayList;
+
+import br.com.comex.modelo.Cliente;
+import br.com.comex.modelo.Pedido;
 
 public class MainPedido {
 	private static ArrayList<Pedido> pedidos = new ArrayList<Pedido>();
