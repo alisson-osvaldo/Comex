@@ -12,11 +12,11 @@ public class MainCategoria {
 	
 	public static void main(String[] args) {
 	    
-		Categoria c1 = new Categoria(1, "Informática", StatusCategoria.ATIVA);
+		Categoria c1 = new Categoria("Informática", StatusCategoria.ATIVA);
 		categorias.add(c1);
-		Categoria c2 = new Categoria(2, "Móveis", StatusCategoria.INATIVA);
+		Categoria c2 = new Categoria("Móveis", StatusCategoria.INATIVA);
 		categorias.add(c2);
-		Categoria c3 = new Categoria(3, "Livros", StatusCategoria.ATIVA);
+		Categoria c3 = new Categoria("Livros", StatusCategoria.ATIVA);
 		categorias.add(c3);
 		
 		
@@ -43,7 +43,6 @@ public class MainCategoria {
 				return categoriaCadastrada;
 			}
 		}
-		//throw new IllegalArgumentException("Categoria não encontrada");
 		return null;
 	}
 	

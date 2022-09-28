@@ -17,11 +17,11 @@ public class MainProduto {
 		
 		/*!!!!!! ATENÇÂO:para cadastrar um produto aqui lembre de comentar todos os testes de exceptions na MainCategoria !!!!!!*/
 		
-		Produto p1 = new Produto(1, "Notebook Samsung", 3523.00, 5, MainCategoria.vincularCategoria("Informática"));
+		Produto p1 = new Produto("Notebook Samsung", 3523.00, 5, MainCategoria.vincularCategoria("Informática"));
 		produtos.add(p1);
-		ProdutoInsento p2 = new ProdutoInsento(2, "Clean Architecture", 102.90, 2, MainCategoria.vincularCategoria("Móveis"));
+		ProdutoInsento p2 = new ProdutoInsento("Clean Architecture", 102.90, 2, MainCategoria.vincularCategoria("Móveis"));
 		produtos.add(p2);
-		Produto p3 = new Produto(3, "Monitor Dell 27", 1889.00, 3, MainCategoria.vincularCategoria("Informática"));
+		Produto p3 = new Produto("Monitor Dell 27", 1889.00, 3, MainCategoria.vincularCategoria("Informática"));
 		produtos.add(p3);
 		//ProdutoInsento p5 = new ProdutoInsento();
 

@@ -6,6 +6,11 @@ public class ProdutoInsento extends Produto{
 			Categoria categoria) {
 		super(id, nome, precoUnitario, quantidadeEmEstoque, categoria);
 	}
+	
+	public ProdutoInsento(String nome, double precoUnitario, int quantidadeEmEstoque,
+			Categoria categoria) {
+		super(nome, precoUnitario, quantidadeEmEstoque, categoria);
+	}
 
 	@Override
 	public String calculaImposto() {

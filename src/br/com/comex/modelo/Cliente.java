@@ -1,5 +1,7 @@
 package br.com.comex.modelo;
 
+import enums.Estados;
+
 public class Cliente {
 	
 	private int id;
@@ -11,15 +13,15 @@ public class Cliente {
 	private String complemento;
 	private String bairro;
 	private String cidade;
-	private String estado;
+	private Estados estado;
 	private static int cont = 1;
 	
 	public Cliente (String nome, String cpf, String telefone, String rua, String numero,
-					String complemento, String bairro, String cidade, String estado) {
+					String complemento, String bairro, String cidade, Estados estado) {
 		
 		this.id = cont++;
 		this.nome = nome;
-		this.cpf = cpf;
+		this.cpf = cpf.replaceAll("\\s+",""); //Remove os espaços
 		this.telefone = telefone;
 		this.rua = rua;
 		this.numero = numero;
@@ -30,27 +32,61 @@ public class Cliente {
 		
 		if (id <= 0) {
 			throw new IllegalArgumentException("Error: Id deve ser maior que zero !!!"); 
-		} else if (nome.length() <= 5) {
+		} 
+		if (nome.length() <= 5) {
 			throw new IllegalArgumentException("Error: nome deve ter mais que 5 caracteres !!! \n:");
-		} else if(cpf.length() < 11 || cpf.length() > 16) {
+		} 
+		if(cpf.length() < 11 || cpf.length() > 16) {
 			throw new IllegalArgumentException("Error: CPF deve ter entre 11 e 14 carácteres !!! \n:");
-		}else if(telefone != null) {
+		}
+		if(telefone != null) {
 			if (telefone.length() < 11 || telefone.length() > 14) {
 				throw new IllegalArgumentException("Error: Telefone deve ter entre 11 e 16 carácteres !!! \n:");
 			}
-		}else if (rua.length() <= 5) {
+		}
+		if (rua.length() <= 5) {
 			throw new IllegalArgumentException("Error: rua deve ter mais que 5 caracteres !!! \n:");
-		} else if (numero.length() < 1) {
+		} 
+		if (numero.length() < 1) {
 			throw new IllegalArgumentException("Error: número deve ter mais que 1 caracteres !!! \n:");
-		} else if (bairro.length() < 1) {
+		} 
+		if (bairro.length() < 1) {
 			throw new IllegalArgumentException("Error: Bairro deve ter mais que 1 caracteres !!! \n:");
-		} else if (cidade.length() < 1) {
+		} 
+		if (cidade.length() < 1) {
 			throw new IllegalArgumentException("Error: Cidade deve ter mais que 1 caracteres !!! \n:");
-		} else if (estado.length() < 2 || estado.length() > 2) {
+		} 
+		
+		if (estado.toString().length() < 2 || estado.toString().length() > 2) {
 			throw new IllegalArgumentException("Error: Estado deve ter 2 caracteres !!! \n:");
 		}
 		
+		if (!nome.substring(0, 1).matches("[A-Z]*")) {
+			throw new IllegalArgumentException("Nome não pode inicializar com números: " + nome); 
+		}
+		
+		//CPF
+		String formatcpf = cpf.replaceAll("\\.",""); //remove .
+		formatcpf = formatcpf.replaceAll("-", "");   //remove -
+		formatcpf = formatcpf.replaceAll("\\s+",""); //remove os espaços
+		if (!formatcpf.matches("[0-9]+")) {          //verifica se tem valores diferentes de numéricos 
+			throw new IllegalArgumentException("Nome não pode ter Letras: " + cpf);
 			
+		}
+		
+		//Telefone
+		if(telefone != null) {
+			String formatTelefone = telefone.replaceAll("\\(",""); 
+			formatTelefone = formatTelefone.replaceAll("\\)","");
+			formatTelefone = formatTelefone.replaceAll("-", "");   
+			formatTelefone = formatTelefone.replaceAll("\\s+",""); 
+			if (!formatTelefone.matches("[0-9]+")) {               
+				throw new IllegalArgumentException("Nome não pode inicializar com Letras: " + telefone);
+				
+			}
+		}
+
+		
 	}
 	
 
@@ -81,10 +117,14 @@ public class Cliente {
 	public String getCidade() {
 		return cidade;
 	}
-	public String getEstado() {
+	public Estados getEstado() {
 		return estado;
 	}
-	
+	public static int getCont() {
+		return cont;
+	}
+
+
 	@Override
 	public String toString() {
 		return "\nCliente: " + 
