@@ -1,7 +1,5 @@
 package br.com.comex.modelo;
 
-import enums.Estados;
-
 public class Cliente {
 	
 	private int id;
@@ -47,18 +45,18 @@ public class Cliente {
 		if (rua.length() <= 5) {
 			throw new IllegalArgumentException("Error: rua deve ter mais que 5 caracteres !!! \n:");
 		} 
-		if (numero.length() < 1) {
+		if (numero.length() <= 1) {
 			throw new IllegalArgumentException("Error: número deve ter mais que 1 caracteres !!! \n:");
 		} 
-		if (bairro.length() < 1) {
+		if (bairro.length() <= 1) {
 			throw new IllegalArgumentException("Error: Bairro deve ter mais que 1 caracteres !!! \n:");
 		} 
-		if (cidade.length() < 1) {
+		if (cidade.length() <= 1) {
 			throw new IllegalArgumentException("Error: Cidade deve ter mais que 1 caracteres !!! \n:");
 		} 
 		
-		if (estado.toString().length() < 2 || estado.toString().length() > 2) {
-			throw new IllegalArgumentException("Error: Estado deve ter 2 caracteres !!! \n:");
+		if (estado == null || estado.toString().length() < 2 || estado.toString().length() > 2) {
+			throw new IllegalArgumentException("Error: Estado deve ter 2 caracteres e não pode ser NULL!!! \n:");
 		}
 		
 		if (!nome.substring(0, 1).matches("[A-Z]*")) {
@@ -70,23 +68,28 @@ public class Cliente {
 		formatcpf = formatcpf.replaceAll("-", "");   //remove -
 		formatcpf = formatcpf.replaceAll("\\s+",""); //remove os espaços
 		if (!formatcpf.matches("[0-9]+")) {          //verifica se tem valores diferentes de numéricos 
-			throw new IllegalArgumentException("Nome não pode ter Letras: " + cpf);
+			throw new IllegalArgumentException("CPF não pode ter Letras: " + cpf);
 			
 		}
 		
 		//Telefone
 		if(telefone != null) {
 			String formatTelefone = telefone.replaceAll("\\(",""); 
-			formatTelefone = formatTelefone.replaceAll("\\)","");
+			formatTelefone = formatTelefone.replaceAll("\\)","");  
 			formatTelefone = formatTelefone.replaceAll("-", "");   
 			formatTelefone = formatTelefone.replaceAll("\\s+",""); 
 			if (!formatTelefone.matches("[0-9]+")) {               
-				throw new IllegalArgumentException("Nome não pode inicializar com Letras: " + telefone);
+				throw new IllegalArgumentException("Número de telefone não pode inicializar com Letras: " + telefone);
 				
 			}
 		}
 
 		
+	}
+	
+	public enum Estados {
+		AC, AL, AP, AM, BA, CE, DF, ES, GO, MA, MT, MS, MG, PA, PB,
+		PR , PE, PI, RJ, RN, RS, RO, RR, SC, SP, SE, TO, TESTE;
 	}
 	
 

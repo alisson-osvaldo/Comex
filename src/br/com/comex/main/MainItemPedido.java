@@ -3,6 +3,7 @@ package br.com.comex.main;
 import java.util.ArrayList;
 
 import br.com.comex.modelo.ItemPedido;
+import br.com.comex.modelo.ItemPedido.Desconto;
 
 public class MainItemPedido {
 
@@ -22,7 +23,7 @@ public class MainItemPedido {
 				MainProduto.BuscarProduto(1), 
 				MainPedido.BuscarPedido(1), 
 				10, 
-				"PROMOCAO");
+				Desconto.PROMOCAO);
 		Items.add(p1);
 		
 		ItemPedido p2 = new ItemPedido( 
@@ -31,7 +32,7 @@ public class MainItemPedido {
 				MainProduto.BuscarProduto(2), 
 				MainPedido.BuscarPedido(2), 
 				0, 
-				"NEMHUM");
+				Desconto.NENHUM);
 		Items.add(p2);
 		
 		ItemPedido p3 = new ItemPedido( 
@@ -40,7 +41,7 @@ public class MainItemPedido {
 				MainProduto.BuscarProduto(3), 
 				MainPedido.BuscarPedido(3), 
 				100, 
-				"QUANTIDADE");
+				Desconto.QUANTIDADE);
 		Items.add(p3);
 		
 		System.out.println(Items);

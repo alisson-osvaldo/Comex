@@ -43,7 +43,6 @@ public class Produto extends CalculadoraValorTotal implements ValorTotal{
 			throw new IllegalArgumentException("O id informado é diferente do próximo id "); 
 		}
 		
-		//this.id = count++;
 		this.id = id;
 		this.nome = nome;
 		this.precoUnitario = precoUnitario;

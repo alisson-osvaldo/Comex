@@ -10,13 +10,13 @@ public class ItemPedido extends CalculadoraValorTotal implements ValorTotal {
 	private int id;
 	private double precoUnitario; //Esse cara deve receber o valor na data do pedido
 	private int quantidade;
-	private Produto produto; //Produto em que foi comprado
-	private Pedido pedido; //Esse cara vai receber o id do pedido 
+	private Produto produto; 
+	private Pedido pedido; 
 	private double desconto;
-	private String tipoDeDesconto;
+	private Desconto tipoDeDesconto;
 	private static int count = 1;
 	
-	public ItemPedido(double precoUnitario, int quantidade, Produto produto, Pedido pedido, double desconto, String tipoDeDesconto) {
+	public ItemPedido(double precoUnitario, int quantidade, Produto produto, Pedido pedido, double desconto, Desconto tipoDeDesconto) {
 		this.id = count++; 
 		this.precoUnitario = precoUnitario; 
 		this.quantidade = quantidade;
@@ -25,6 +25,10 @@ public class ItemPedido extends CalculadoraValorTotal implements ValorTotal {
 		this.desconto = desconto;
 		this.tipoDeDesconto = tipoDeDesconto;
 		
+	}
+	
+	public enum Desconto{
+		QUANTIDADE, PROMOCAO, NENHUM
 	}
 	
 	public int getId() {
@@ -45,7 +49,7 @@ public class ItemPedido extends CalculadoraValorTotal implements ValorTotal {
 	public double getDesconto() {
 		return desconto;
 	}
-	public String getTipoDeDesconto() {
+	public Desconto getTipoDeDesconto() {
 		return tipoDeDesconto;
 	}
 	
@@ -59,11 +63,11 @@ public class ItemPedido extends CalculadoraValorTotal implements ValorTotal {
 		double total;
 		double totalSemDesconto = this.totalSemDesconto();
 		
-		if (this.tipoDeDesconto == "QUANTIDADE" && this.quantidade > 10) {
+		if (this.tipoDeDesconto == Desconto.QUANTIDADE && this.quantidade > 10) {
 			total = this.desconto + (totalSemDesconto * 0.1);
 			NumberFormat.getCurrencyInstance().format(total);
 			return total;
-		} else if (this.tipoDeDesconto == "PROMOCAO") {
+		} else if (this.tipoDeDesconto == Desconto.PROMOCAO) {
 			total = this.desconto + (totalSemDesconto * 0.2);
 			NumberFormat.getCurrencyInstance().format(total);
 			return total;

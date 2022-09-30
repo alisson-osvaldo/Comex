@@ -27,17 +27,14 @@ public class MainProduto {
 
 	
 		
-		//Valores inválidos testes exception IllegalArgumentException 
+		//Valores inválidos testes exception 
 		//Produto p4 = new Produto(0, "Notebook Samsung", 3523.00, 1, MainCategoria.vincularCategoria("Informática"));
-		
 		//Produto p4 = new Produto(4, "Not", 3523.00, 1, MainCategoria.vincularCategoria("Informática"));
-
-		//Produto p4 = new Produto(4, "Notebook Samsung", 0, 1, MainCategoria.vincularCategoria("Informática"));		
-				
+		//Produto p4 = new Produto(4, "Notebook Samsung", 0, 1, MainCategoria.vincularCategoria("Informática"));			
 		//Produto p4 = new Produto(4, "Notebook Samsung", 3523.00, 1, null);
-		
 		//Teste exception ProdutoInsento
 		//ProdutoInsento p5 = new ProdutoInsento(5, "T.I", 102.90, 2, MainCategoria.vincularCategoria("Móveis"));
+		
 		
 		if (chave == false) {
 			System.out.println(produtos);
@@ -45,9 +42,7 @@ public class MainProduto {
 			chave = false;
 		}
 		
-			
-		
-		
+				
 	}
 	
 	public static Produto BuscarProduto(int idProduto) {
