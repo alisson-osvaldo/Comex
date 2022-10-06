@@ -29,9 +29,9 @@ public class LeitorPedidosCsv {
 			String preco = valores[2];
 			String quantidade = valores[3];
 			String data = valores[4];
-			String Cliente = valores[5];
+			String cliente = valores[5];
 			
-			PedidoCsv pedido =  new PedidoCsv(categoria, produto, preco, quantidade, data, Cliente);
+			PedidoCsv pedido =  new PedidoCsv(categoria, produto, cliente, preco, quantidade, data);
 			
 			pedidos.add(pedido);
 					
