@@ -1,12 +1,16 @@
 package br.com.comex.main;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.List;
 
+import br.com.comex.csv.LeitorPedidosCsv;
+import br.com.comex.csv.PedidoCsv;
 import br.com.comex.modelo.Cliente;
 import br.com.comex.modelo.Pedido;
 
 public class MainPedido {
-	private static ArrayList<Pedido> pedidos = new ArrayList<Pedido>();
+	public static ArrayList<Pedido> pedidos = new ArrayList<Pedido>();
 	public static boolean chave;
 	
 	public static void main(String[] args) {		
@@ -33,6 +37,7 @@ public class MainPedido {
 		}else {
 			chave = false;
 		}
+		
 			
 	}
 	
@@ -44,5 +49,6 @@ public class MainPedido {
 		}
 		return null;
 	}
+	
 
 }

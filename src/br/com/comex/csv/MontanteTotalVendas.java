@@ -6,7 +6,7 @@ import java.util.List;
 
 public class MontanteTotalVendas {
 	
-	public void CalculoTotalVendas() throws FileNotFoundException {
+	public void calculoTotalVendas() throws FileNotFoundException {
 		
 		LeitorPedidosCsv leitorPedidoCsv = new LeitorPedidosCsv();
 		List<PedidoCsv> pedidosCsv = leitorPedidoCsv.lerPedidosCsv();

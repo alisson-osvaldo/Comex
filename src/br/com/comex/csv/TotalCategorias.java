@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class TotalCategorias {
 
-	public void CalcularTotalCategoriasDistintas() throws FileNotFoundException {
+	public void calcularTotalCategoriasDistintas() throws FileNotFoundException {
 		LeitorPedidosCsv leitorPedidoCsv = new LeitorPedidosCsv();
 		List<PedidoCsv> pedidosCsv = leitorPedidoCsv.lerPedidosCsv();
 		

@@ -23,13 +23,13 @@ public class MainPedidosCsv {
 		totalProdutosVendidos.calcularTotalProdutosVendidos(); 
 		
 		TotalCategorias totalCategorias = new TotalCategorias();
-		totalCategorias.CalcularTotalCategoriasDistintas(); 
+		totalCategorias.calcularTotalCategoriasDistintas(); 
 		
 		MontanteTotalVendas montanteTotalVendas = new MontanteTotalVendas();
-		montanteTotalVendas.CalculoTotalVendas();
+		montanteTotalVendas.calculoTotalVendas();
 		
 		PedidoMaisBaratoEMaisCaro pedidoMaisBaratoEMaisCaro = new PedidoMaisBaratoEMaisCaro();
-		pedidoMaisBaratoEMaisCaro.CalculoPedidoMaisBaratoEMaisCaro();
+		pedidoMaisBaratoEMaisCaro.calculoPedidoMaisBaratoEMaisCaro();
 		
 		
 //		for (PedidoCsv pedido : pedidosCsv) { 

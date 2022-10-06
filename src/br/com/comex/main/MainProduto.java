@@ -6,7 +6,7 @@ import br.com.comex.modelo.Produto;
 import br.com.comex.modelo.ProdutoInsento;
 
 public class MainProduto {
-	private static ArrayList<Produto> produtos = new ArrayList<Produto>();
+	public static ArrayList<Produto> produtos = new ArrayList<Produto>();
 	public static boolean chave;
 	
 	public static void main(String[] args){

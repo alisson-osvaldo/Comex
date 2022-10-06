@@ -5,7 +5,7 @@ import br.com.comex.modelo.Cliente;
 import br.com.comex.modelo.Cliente.Estados;
 
 public class MainCliente {
-	private static ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+	public static ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 	public static boolean chave;
 	
 	public static void main(String[] args) {

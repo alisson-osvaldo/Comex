@@ -7,7 +7,7 @@ import br.com.comex.modelo.Categoria.Status;
 
 
 public class MainCategoria {
-	private static ArrayList<Categoria> categorias = new ArrayList<Categoria>();
+	public static ArrayList<Categoria> categorias = new ArrayList<Categoria>();
 	public static boolean chave;
 	
 	public static void main(String[] args) {
