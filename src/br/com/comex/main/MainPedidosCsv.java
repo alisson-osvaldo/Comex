@@ -4,11 +4,13 @@ import java.io.FileNotFoundException;
 import java.util.List;
 
 import br.com.comex.csv.LeitorPedidosCsv;
+import br.com.comex.csv.MontanteTotalVendas;
 import br.com.comex.csv.PedidoCsv;
+import br.com.comex.csv.PedidoMaisBaratoEMaisCaro;
 import br.com.comex.csv.TotalCategorias;
 import br.com.comex.csv.TotalProdutosVendidos;
 
-public class MainLeitorPedidosCsv {
+public class MainPedidosCsv {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		
@@ -18,11 +20,16 @@ public class MainLeitorPedidosCsv {
 		
 		
 		TotalProdutosVendidos totalProdutosVendidos = new TotalProdutosVendidos();
-		System.out.println("Total de produtos vendidos: " + totalProdutosVendidos.calcularTotalProdutosVendidos() + "\n"); 
+		totalProdutosVendidos.calcularTotalProdutosVendidos(); 
 		
 		TotalCategorias totalCategorias = new TotalCategorias();
-		System.out.println("Total de categorias: " + totalCategorias.CalcularTotalCategoriasDistintas()); 
+		totalCategorias.CalcularTotalCategoriasDistintas(); 
 		
+		MontanteTotalVendas montanteTotalVendas = new MontanteTotalVendas();
+		montanteTotalVendas.CalculoTotalVendas();
+		
+		PedidoMaisBaratoEMaisCaro pedidoMaisBaratoEMaisCaro = new PedidoMaisBaratoEMaisCaro();
+		pedidoMaisBaratoEMaisCaro.CalculoPedidoMaisBaratoEMaisCaro();
 		
 		
 //		for (PedidoCsv pedido : pedidosCsv) { 

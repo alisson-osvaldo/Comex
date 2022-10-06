@@ -6,7 +6,7 @@ import java.util.List;
 public class TotalProdutosVendidos {
 
 	
-	public int calcularTotalProdutosVendidos() throws FileNotFoundException {
+	public void calcularTotalProdutosVendidos() throws FileNotFoundException {
 		LeitorPedidosCsv leitorPedidoCsv = new LeitorPedidosCsv();
 		List<PedidoCsv> pedidosCsv = leitorPedidoCsv.lerPedidosCsv();
 		
@@ -21,7 +21,8 @@ public class TotalProdutosVendidos {
 			}
 			
 		}
-		return soma;
+		System.out.println("Total de produtos vendidos: " + soma + "\n");
+
 	}
 		
 		

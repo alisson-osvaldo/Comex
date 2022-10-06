@@ -15,9 +15,9 @@ public class MainPedido {
 		MainCliente.chave = true;
 		MainCliente.main(args);
 		
-		Cliente c1 = MainCliente.buscarCliente("Ana");
-		Cliente c2 = MainCliente.buscarCliente("Eli");
-		Cliente c3 = MainCliente.buscarCliente("Gabi");
+		Cliente c1 = MainCliente.buscarCliente("Analura");
+		Cliente c2 = MainCliente.buscarCliente("Eliezer");
+		Cliente c3 = MainCliente.buscarCliente("Gabriela");
 		
 		Pedido p1 = new Pedido("10/09/2022", c1);
 		pedidos.add(p1);

@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class TotalCategorias {
 
-	public int CalcularTotalCategoriasDistintas() throws FileNotFoundException {
+	public void CalcularTotalCategoriasDistintas() throws FileNotFoundException {
 		LeitorPedidosCsv leitorPedidoCsv = new LeitorPedidosCsv();
 		List<PedidoCsv> pedidosCsv = leitorPedidoCsv.lerPedidosCsv();
 		
@@ -18,8 +18,8 @@ public class TotalCategorias {
 				String categoria = pedido.getCategoria();
 				set.add(categoria);
 			}
-			
-		return set.size();
+			System.out.println("Total de categorias: " + set.size()); 
+
 	}
 	
 }
