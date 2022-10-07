@@ -6,10 +6,7 @@ import java.util.List;
 
 public class MontanteTotalVendas {
 	
-	public void calculoTotalVendas() throws FileNotFoundException {
-		
-		LeitorPedidosCsv leitorPedidoCsv = new LeitorPedidosCsv();
-		List<PedidoCsv> pedidosCsv = leitorPedidoCsv.lerPedidosCsv();
+	public void calculoTotalVendas(List<PedidoCsv> pedidosCsv) throws FileNotFoundException {
 		
 		double multiplicacao = 0;
 		double total = 0;

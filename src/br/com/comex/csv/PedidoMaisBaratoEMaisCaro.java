@@ -6,10 +6,7 @@ import java.util.List;
 
 public class PedidoMaisBaratoEMaisCaro {
 	
-	public void calculoPedidoMaisBaratoEMaisCaro() throws FileNotFoundException {
-		
-		LeitorPedidosCsv leitorPedidoCsv = new LeitorPedidosCsv();
-		List<PedidoCsv> pedidosCsv = leitorPedidoCsv.lerPedidosCsv();
+	public void calculoPedidoMaisBaratoEMaisCaro(List<PedidoCsv> pedidosCsv) throws FileNotFoundException {
 		
 		double menor = Integer.MAX_VALUE;
 		double maior = Integer.MIN_VALUE;

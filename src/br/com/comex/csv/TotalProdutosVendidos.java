@@ -6,9 +6,7 @@ import java.util.List;
 public class TotalProdutosVendidos {
 
 	
-	public void calcularTotalProdutosVendidos() throws FileNotFoundException {
-		LeitorPedidosCsv leitorPedidoCsv = new LeitorPedidosCsv();
-		List<PedidoCsv> pedidosCsv = leitorPedidoCsv.lerPedidosCsv();
+	public void calcularTotalProdutosVendidos(List<PedidoCsv> pedidosCsv) throws FileNotFoundException {
 		
 		int soma = 0;
 		

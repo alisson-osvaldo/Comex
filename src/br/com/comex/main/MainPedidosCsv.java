@@ -20,16 +20,16 @@ public class MainPedidosCsv {
 		
 		
 		TotalProdutosVendidos totalProdutosVendidos = new TotalProdutosVendidos();
-		totalProdutosVendidos.calcularTotalProdutosVendidos(); 
+		totalProdutosVendidos.calcularTotalProdutosVendidos(pedidosCsv); 
 		
 		TotalCategorias totalCategorias = new TotalCategorias();
-		totalCategorias.calcularTotalCategoriasDistintas(); 
+		totalCategorias.calcularTotalCategoriasDistintas(pedidosCsv); 
 		
 		MontanteTotalVendas montanteTotalVendas = new MontanteTotalVendas();
-		montanteTotalVendas.calculoTotalVendas();
+		montanteTotalVendas.calculoTotalVendas(pedidosCsv);
 		
 		PedidoMaisBaratoEMaisCaro pedidoMaisBaratoEMaisCaro = new PedidoMaisBaratoEMaisCaro();
-		pedidoMaisBaratoEMaisCaro.calculoPedidoMaisBaratoEMaisCaro();
+		pedidoMaisBaratoEMaisCaro.calculoPedidoMaisBaratoEMaisCaro(pedidosCsv);
 		
 		
 //		for (PedidoCsv pedido : pedidosCsv) { 

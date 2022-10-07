@@ -12,12 +12,12 @@ public class Cliente {
 	private String bairro;
 	private String cidade;
 	private Estados estado;
-	private static int cont = 1;
+	private static int count = 1;
 	
 	public Cliente (String nome, String cpf, String telefone, String rua, String numero,
 					String complemento, String bairro, String cidade, Estados estado) {
 		
-		this.id = cont++;
+		this.id = count++;
 		this.nome = nome;
 		this.cpf = cpf.replaceAll("\\s+",""); //Remove os espaços
 		this.telefone = telefone;
@@ -63,6 +63,10 @@ public class Cliente {
 			throw new IllegalArgumentException("Nome não pode inicializar com números: " + nome); 
 		}
 		
+//		if (id != count) {
+//			throw new IllegalArgumentException("O id informado é diferente do próximo id "); 
+//		}
+		
 		//CPF
 		String formatcpf = cpf.replaceAll("\\.",""); //remove .
 		formatcpf = formatcpf.replaceAll("-", "");   //remove -
@@ -90,6 +94,21 @@ public class Cliente {
 	public enum Estados {
 		AC, AL, AP, AM, BA, CE, DF, ES, GO, MA, MT, MS, MG, PA, PB,
 		PR , PE, PI, RJ, RN, RS, RO, RR, SC, SP, SE, TO, TESTE;
+	}
+	
+	public Cliente (int id, String nome, String cpf, String telefone, String rua, String numero,
+			String complemento, String bairro, String cidade, Estados estado) {
+		
+		this.id = id;
+		this.nome = nome;
+		this.cpf = cpf.replaceAll("\\s+",""); //Remove os espaços
+		this.telefone = telefone;
+		this.rua = rua;
+		this.numero = numero;
+		this.complemento = complemento;
+		this.bairro = bairro;
+		this.cidade = cidade;
+		this.estado = estado;
 	}
 	
 
@@ -124,7 +143,7 @@ public class Cliente {
 		return estado;
 	}
 	public static int getCont() {
-		return cont;
+		return count;
 	}
 
 
