@@ -39,6 +39,32 @@ public class Categoria {
 			
 	}
 	
+public Categoria(String nome, Status status, int id) {
+		
+		if (id <= 0) {
+			throw new IllegalArgumentException("Error: Id igual ou menor que 0 !!!"); 
+		} 
+		if(nome.length() <= 3) {
+			throw new IllegalArgumentException("Error: nome com menos de 3 carácteres !!! \n:");
+		} 
+		
+		
+		if(status == null || status != Status.ATIVA && status != Status.INATIVA){
+			throw new ComexException("Testando ComexException: \n Error: Status:"  + status + " é inválido !!!");
+		}
+		
+				
+		if (!nome.substring(0, 1).matches("[A-Z]*")) {
+			throw new IllegalArgumentException("Nome não pode inicializar com números: " + nome); 
+		}
+		
+		
+		this.id = id;
+		this.nome = nome;
+		this.status = status;	
+		
+			
+	}
 	public Categoria(String nome, Status status) {
 		this.id = count++;
 		this.nome = nome;

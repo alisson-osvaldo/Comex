@@ -6,4 +6,5 @@
  *
  */
 module Comex {
+	requires java.sql;
 }

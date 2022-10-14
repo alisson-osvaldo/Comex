@@ -14,6 +14,8 @@ public class Produto extends CalculadoraValorTotal implements ValorTotal{
 	private double precoUnitario;
 	private int quantidadeEmEstoque;
 	private Categoria categoria;
+	private Tipo tipo;
+	private int categoria_id;
 	private static int count = 1;
 	
 	
@@ -58,6 +60,32 @@ public class Produto extends CalculadoraValorTotal implements ValorTotal{
 		this.categoria = categoria;
 	}
 	
+	public Produto(String nome, String descricao, double precoUnitario, int quantidadeEmEstoque, int categoria_id, Tipo tipo) {
+		this.nome = nome;
+		this.descricao = descricao;
+		this.precoUnitario = precoUnitario;
+		this.quantidadeEmEstoque = quantidadeEmEstoque;
+		this.categoria_id = categoria_id;
+		this.tipo = tipo;
+	}
+	
+	public Produto(int id, String nome, String descricao, double precoUnitario, int quantidadeEmEstoque, int categoria_id, Tipo tipo) {
+		this.id = id;
+		this.nome = nome;
+		this.descricao = descricao;
+		this.precoUnitario = precoUnitario;
+		this.quantidadeEmEstoque = quantidadeEmEstoque;
+		this.categoria_id = categoria_id;
+		this.tipo = tipo;
+	}
+	
+	public enum Tipo{
+		ISENTO, NAO_ISENTO
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
 	public int getId() {
 		return id;
 	}
@@ -92,6 +120,22 @@ public class Produto extends CalculadoraValorTotal implements ValorTotal{
 		this.categoria = categoria;
 	}
 	
+	public Tipo getTipo() {
+		return tipo;
+	}
+	
+	public void setTipo(Tipo tipo) {
+		this.tipo = tipo;
+	}
+	
+	public int getCategoria_id() {
+		return categoria_id;
+	}
+	
+	public void setCategoria_id(int categoria_id) {
+		this.categoria_id = categoria_id;
+	}
+	
 	public double valorTotalEstoque() {
 		double total = this.getQuantidadeEmEstoque() * this.getPrecoUnitario();
 		NumberFormat.getCurrencyInstance().format(total);
@@ -110,22 +154,11 @@ public class Produto extends CalculadoraValorTotal implements ValorTotal{
 				+ " Descrição: " + descricao + " \n"
 				+ " Preço unitario: " + precoUnitario + " \n"
 				+ " Quantidade no estoque: " + quantidadeEmEstoque + " \n"
-				+ " Categoria: " + categoria.getNome()+ " \n"
+				//+ " Categoria: " + categoria.getNome()+ " \n"
+				+ " Categoria_id: " + categoria_id + " \n"
+				+ " Tipo: " + tipo + "\n"
 				+ " Valor Total em Estoque: " + valorTotalEstoque() + " \n"
 				+ " Imposto: " + calculaImposto() + "\n \n";
 	}
 
-
-
-
-
-
-
-
-
-
-
-		
-	
-	
 }
