@@ -102,19 +102,19 @@ public class ItemPedidoDAO {
 	}
 	
 	public void altera(ItemPedido itemPedidoParaAlterar) throws SQLException {
-		String sql = "UPDATE comex.item_pedido i SET i.id = ?, i.preco_unitario = ?, i.quantidade = ?, i.produto_id = ?, i.pedido_id = ?, i.desconto = ?, i.tipo_desconto = ? WHERE i.id = ?";
+		String sql = "UPDATE comex.item_pedido SET preco_unitario=?,quantidade=?,produto_id=?,pedido_id=?,desconto=?,tipo_desconto=?"
+				+ " WHERE id=?";
 			
 		try(PreparedStatement stm = connection.prepareStatement(sql)) {
 			connection.setAutoCommit(false);
 			
-			stm.setInt(1, itemPedidoParaAlterar.getId());
-			stm.setDouble(2, itemPedidoParaAlterar.getPrecoUnitario());
-			stm.setInt(3, itemPedidoParaAlterar.getQuantidade());
-			stm.setInt(4, itemPedidoParaAlterar.getProduto_id());
-			stm.setInt(5, itemPedidoParaAlterar.getPedido_id());
-			stm.setDouble(6, itemPedidoParaAlterar.getDesconto());
-			stm.setString(7, itemPedidoParaAlterar.getTipoDeDesconto().toString());
-			stm.setInt(8, itemPedidoParaAlterar.getId());
+			stm.setDouble(1, itemPedidoParaAlterar.getPrecoUnitario());
+			stm.setInt(2, itemPedidoParaAlterar.getQuantidade());
+			stm.setInt(3, itemPedidoParaAlterar.getProduto_id());
+			stm.setInt(4, itemPedidoParaAlterar.getPedido_id());
+			stm.setDouble(5, itemPedidoParaAlterar.getDesconto());
+			stm.setString(6, itemPedidoParaAlterar.getTipoDeDesconto().toString());
+			stm.setInt(7, itemPedidoParaAlterar.getId());
 			stm.execute();
 			stm.close();
 			connection.commit();

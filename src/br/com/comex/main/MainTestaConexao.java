@@ -13,5 +13,18 @@ public class MainTestaConexao {
 		System.out.println("Conexão efetuada com sucesso");
 		connection.close();
 		
+		
+		//MainTestaConexao.testaPollConexao();
+			
 	}
+	
+	public static void testaPollConexao() throws SQLException {
+		ConnectionFactory connectionFactory = new ConnectionFactory();
+		System.out.println("\n\n\nTeste Pool de Conexões: ");
+		for (int i = 0; i < 20; i++) {
+			connectionFactory.getConnection();
+			System.out.println("Conexão de numero: " + i);
+		}
+	}
+	
 }
