@@ -8,16 +8,11 @@ public class MontanteTotalVendas {
 	
 	public void calculoTotalVendas(List<PedidoCsv> pedidosCsv) throws FileNotFoundException {
 		
-		double multiplicacao = 0;
 		double total = 0;
 		
 		for (PedidoCsv pedido : pedidosCsv) {		
 			try {
-				int qtd = Integer.parseInt(pedido.getQuantidade());
-				double preco = Double.parseDouble(pedido.getPreco());
-				multiplicacao = qtd * preco;
-				total += multiplicacao;
-				
+				total += pedido.ValorTotal(Integer.parseInt(pedido.getQuantidade()), Double.parseDouble(pedido.getPreco()));	
 			} catch (NumberFormatException e) {
 				System.out.println("Erro não é permitido caracter: " + e);
 			}

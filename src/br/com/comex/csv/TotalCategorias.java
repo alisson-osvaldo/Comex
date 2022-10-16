@@ -19,18 +19,6 @@ public class TotalCategorias {
 			}
 			System.out.println("Total de categorias: " + set.size()); 
 			
-			
-			/*
-			List<String> categoriasQueJaApareceram = new ArrayList<>();	
-		
-			for (PedidoCsv pedido : pedidosCsv) {
-				String categoria = pedido.getCategoria();
-				if (!categoriasQueJaApareceram.contains(categoria)) { 
-					categoriasQueJaApareceram.add(categoria);
-				}
-			}
-			System.out.println("Total de categorias: " + categoriasQueJaApareceram.size());
-			*/
 	}
 	
 }

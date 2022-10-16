@@ -1,5 +1,7 @@
 package br.com.comex.csv;
 
+import java.io.FileNotFoundException;
+
 public class PedidoCsv {
 	
 	private String categoria;
@@ -43,6 +45,11 @@ public class PedidoCsv {
     public String getData() {
         return data;
     }
+    
+	public double ValorTotal(int qtd, double preco) throws FileNotFoundException {
+		double multiplicacao = 0;
+		return multiplicacao = qtd * preco;			
+	}
 
     @Override
     public String toString() {
