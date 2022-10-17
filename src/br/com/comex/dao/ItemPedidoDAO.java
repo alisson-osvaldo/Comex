@@ -29,8 +29,8 @@ public class ItemPedidoDAO {
 			try(PreparedStatement pstm = connection.prepareStatement(sql)) {
 				pstm.setDouble(1, novoItemPedido.getPrecoUnitario());
 				pstm.setInt(2, novoItemPedido.getQuantidade());
-				pstm.setInt(3, novoItemPedido.getProduto_id());
-				pstm.setInt(4, novoItemPedido.getPedido_id());
+				pstm.setInt(3, novoItemPedido.getProdutoId());
+				pstm.setInt(4, novoItemPedido.getPedidoId());
 				pstm.setDouble(5, novoItemPedido.getDesconto());
 				pstm.setString(6, novoItemPedido.getTipoDeDesconto().toString());
 				pstm.execute();
@@ -110,8 +110,8 @@ public class ItemPedidoDAO {
 			
 			stm.setDouble(1, itemPedidoParaAlterar.getPrecoUnitario());
 			stm.setInt(2, itemPedidoParaAlterar.getQuantidade());
-			stm.setInt(3, itemPedidoParaAlterar.getProduto_id());
-			stm.setInt(4, itemPedidoParaAlterar.getPedido_id());
+			stm.setInt(3, itemPedidoParaAlterar.getProdutoId());
+			stm.setInt(4, itemPedidoParaAlterar.getPedidoId());
 			stm.setDouble(5, itemPedidoParaAlterar.getDesconto());
 			stm.setString(6, itemPedidoParaAlterar.getTipoDeDesconto().toString());
 			stm.setInt(7, itemPedidoParaAlterar.getId());

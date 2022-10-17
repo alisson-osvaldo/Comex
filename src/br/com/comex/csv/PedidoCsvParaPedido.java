@@ -18,7 +18,7 @@ public class PedidoCsvParaPedido {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		
-		LeitorPedidosCsv leitorPedidoCsv = new LeitorPedidosCsv();
+		LeitorPedidos leitorPedidoCsv = new LeitorPedidos();
 		List<PedidoCsv> pedidosCsv = leitorPedidoCsv.lerPedidosCsv();
 		
 		

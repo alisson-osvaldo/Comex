@@ -7,8 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import oracle.jdbc.driver.json.parser.JsonParserImpl;
 
-public class LeitorPedidosCsv {
+
+public class LeitorPedidos {
 	
 	
 	public List<PedidoCsv> lerPedidosCsv() throws FileNotFoundException{
@@ -37,8 +39,8 @@ public class LeitorPedidosCsv {
 					
 		}	
 		//System.out.println("total de pedidos: " + pedidos.size());
-		return pedidos;
-		
-		
+		return pedidos;		
 	}	
+	
+		
 }

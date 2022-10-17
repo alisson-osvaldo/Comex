@@ -12,7 +12,7 @@ public class MainProdutoExcluir {
 		
 		try(Connection connection = new ConnectionFactory().getConnection()){
 			ProdutoDAO produtoDAO = new ProdutoDAO(connection);
-			produtoDAO.excluir(49);
+			produtoDAO.excluir(71);
 			connection.close();
 			System.out.println("Produto Deletado com sucesso!");
 		}catch (Exception e) {

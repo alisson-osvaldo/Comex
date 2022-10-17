@@ -17,7 +17,7 @@ public class MainRemocaoCategoria {
 			connection.setAutoCommit(false);
 			
 			try (PreparedStatement stm = connection.prepareStatement(sql)) {
-				stm.setNString(1, "INATIVA");
+				stm.setString(1, "INATIVA");
 				stm.execute();
 				connection.commit();
 				stm.close();

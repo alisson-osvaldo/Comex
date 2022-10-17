@@ -3,7 +3,7 @@ package br.com.comex.main;
 import java.io.FileNotFoundException;
 import java.util.List;
 
-import br.com.comex.csv.LeitorPedidosCsv;
+import br.com.comex.csv.LeitorPedidos;
 import br.com.comex.csv.MontanteTotalVendas;
 import br.com.comex.csv.PedidoCsv;
 import br.com.comex.csv.PedidoMaisBaratoEMaisCaro;
@@ -14,7 +14,7 @@ public class MainPedidosCsv {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		
-		LeitorPedidosCsv leitorPedidoCsv = new LeitorPedidosCsv();
+		LeitorPedidos leitorPedidoCsv = new LeitorPedidos();
 		List<PedidoCsv> pedidosCsv = leitorPedidoCsv.lerPedidosCsv();
 		System.out.println("total de pedidos: " + pedidosCsv.size() + "\n"); 
 		

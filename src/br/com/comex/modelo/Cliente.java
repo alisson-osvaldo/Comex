@@ -150,7 +150,7 @@ public class Cliente {
 	@Override
 	public String toString() {
 		return "\nCliente: " + 
-				"\n id= " + id + 
+				//"\n id= " + id + 
 				"\n nome= " + nome + 
 				"\n cpf=" + cpf + 
 				"\n telefone=" + telefone + 

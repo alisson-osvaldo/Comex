@@ -14,5 +14,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="JARs/c3p0-0.9.5.4.jar"/>
 	<classpathentry kind="lib" path="JARs/mchange-commons-java-0.2.16.jar"/>
+	<classpathentry kind="lib" path="JARs/json-simple-1.1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

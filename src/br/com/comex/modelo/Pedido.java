@@ -44,7 +44,7 @@ public class Pedido {
 	@Override
 	public String toString() {
 		return "\nPedido: "
-				+ "\n id= " + id 
+				//+ "\n id= " + id 
 				+ "\n data= " + data 
 				//+ "\n " + cliente + "\n"
 				+ "\n Cliente_id: " + cliente_id + "\n\n";

@@ -149,7 +149,7 @@ public class Produto extends CalculadoraValorTotal implements ValorTotal{
 	@Override
 	public String toString() {
 		return "\n Produto: \n" 
-				+ " Id: " + id + " \n"
+				//+ " Id: " + id + " \n"
 				+ " Nome: " + nome + " \n"
 				+ " Descrição: " + descricao + " \n"
 				+ " Preço unitario: " + precoUnitario + " \n"

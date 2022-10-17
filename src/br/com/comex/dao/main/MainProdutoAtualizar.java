@@ -12,7 +12,7 @@ public class MainProdutoAtualizar {
 
 	public static void main(String[] args) throws SQLException {
 		
-		Produto atualizarProduto = new Produto(50, "TecladoTeste", "Teclado REDRAGON", 700.50, 1, 90, Tipo.ISENTO);
+		Produto atualizarProduto = new Produto(43, "TecladoTeste", "Teclado REDRAGON", 700.50, 1, 128, Tipo.ISENTO);
 		
 		try(Connection connection = new ConnectionFactory().getConnection()){
 			ProdutoDAO produtoDAO = new ProdutoDAO(connection);

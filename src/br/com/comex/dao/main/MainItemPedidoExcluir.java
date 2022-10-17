@@ -11,7 +11,7 @@ public class MainItemPedidoExcluir {
 		
 		try(Connection connection = new ConnectionFactory().getConnection()){
 			ItemPedidoDAO itemPedidoDAO = new ItemPedidoDAO(connection);
-			itemPedidoDAO.excluir(9);
+			itemPedidoDAO.excluir(8);
 			connection.close();
 			System.out.println("Pedido Deletado com sucesso!");
 		}catch (Exception e) {

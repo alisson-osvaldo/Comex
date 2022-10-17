@@ -11,9 +11,9 @@ public class ItemPedido extends CalculadoraValorTotal implements ValorTotal {
 	private double precoUnitario; //Esse cara deve receber o valor na data do pedido
 	private int quantidade;
 	private Produto produto; 
-	private int produto_id;
+	private int produtoId;
 	private Pedido pedido;
-	private int pedido_id;
+	private int pedidoId;
 	private double desconto;
 	private Desconto tipoDeDesconto;
 	private static int count = 1;
@@ -29,22 +29,22 @@ public class ItemPedido extends CalculadoraValorTotal implements ValorTotal {
 		
 	}
 	
-	public ItemPedido(int id, double precoUnitario, int quantidade, int produto_id, int pedido_id, double desconto, Desconto tipoDeDesconto) {
+	public ItemPedido(int id, double precoUnitario, int quantidade, int produtoId, int pedidoId, double desconto, Desconto tipoDeDesconto) {
 		this.id = count++; 
 		this.precoUnitario = precoUnitario; 
 		this.quantidade = quantidade;
-		this.produto_id = produto_id;
-		this.pedido_id = pedido_id;
+		this.produtoId = produtoId;
+		this.pedidoId = pedidoId;
 		this.desconto = desconto;
 		this.tipoDeDesconto = tipoDeDesconto;
 		
 	}
 	
-	public ItemPedido(double precoUnitario, int quantidade, int produto_id, int pedido_id, double desconto, Desconto tipoDeDesconto) {
+	public ItemPedido(double precoUnitario, int quantidade, int produtoId, int pedidoId, double desconto, Desconto tipoDeDesconto) {
 		this.precoUnitario = precoUnitario; 
 		this.quantidade = quantidade;
-		this.produto_id = produto_id;
-		this.pedido_id = pedido_id;
+		this.produtoId = produtoId;
+		this.pedidoId = pedidoId;
 		this.desconto = desconto;
 		this.tipoDeDesconto = tipoDeDesconto;
 		
@@ -75,11 +75,11 @@ public class ItemPedido extends CalculadoraValorTotal implements ValorTotal {
 	public Desconto getTipoDeDesconto() {
 		return tipoDeDesconto;
 	}
-	public int getProduto_id() {
-		return produto_id;
+	public int getProdutoId() {
+		return produtoId;
 	}
-	public int getPedido_id() {
-		return pedido_id;
+	public int getPedidoId() {
+		return pedidoId;
 	}
 	
 	public double totalSemDesconto() {
@@ -117,13 +117,13 @@ public class ItemPedido extends CalculadoraValorTotal implements ValorTotal {
 	@Override
 	public String toString() {
 		return "\n ------------------ ItemPedido: ------------------\n"
-				+ "\n id= " + id  
+				//+ "\n id= " + id  
 				+ "\n\n Preço Unitário: " + precoUnitario
 				+"\n\n quantidade= " + quantidade 
 				//+ "\n " + produto 
 				//+ "\n " + pedido
-				+ "\n Produto_id: " + produto_id
-				+ "\n Pedido_di: " + pedido_id
+				+ "\n Produto_id: " + produtoId
+				+ "\n Pedido_di: " + pedidoId
 				+ "\n desconto= " + desconto 
 				+ "\n tipoDeDesconto= " + tipoDeDesconto 
 				+ "\n preco total sem descontos:" + totalSemDesconto() 
