@@ -1,20 +1,23 @@
 package br.com.comex.transacao;
 
-import java.math.BigDecimal;
+import java.sql.Connection;
 import java.sql.SQLException;
+
+import br.com.comex.factory.ConnectionFactory;
+import br.com.comex.modelo.Produto.Tipo;
 
 
 public class MainTransacao {
 	
 	public static void main(String[] args) throws SQLException {
 		
-		try {
-			Transacao novaTransacao = new Transacao(32, new BigDecimal("50"));
-			novaTransacao.executa();
-			System.out.println("\n" + novaTransacao);
+		try(Connection connection = new ConnectionFactory().getConnection()){
+			InsereProdutoCommand insereProduto = new InsereProdutoCommand("Command", "Testando", 550.50, 2, Tipo.ISENTO, 128, connection);
+			insereProduto.execute();
+			connection.close();
 		}catch (Exception e) {
 			e.printStackTrace();
-		}
+		}			
 		
 	}
 	
