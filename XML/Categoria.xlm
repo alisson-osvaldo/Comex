@@ -1,0 +1,16 @@
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <ns2:getCategoriasResponse xmlns:ns2="http://ws.comex.com.br/">
+         <return>
+            <id>3</id>
+            <nome>Informática</nome>
+            <status>ATIVA</status>
+         </return>
+         <return>
+            <id>4</id>
+            <nome>LIVROS TÉCNICOS</nome>
+            <status>ATIVA</status>
+         </return>
+      </ns2:getCategoriasResponse>
+   </S:Body>
+</S:Envelope>

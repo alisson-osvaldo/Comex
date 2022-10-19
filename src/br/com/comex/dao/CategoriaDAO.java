@@ -9,8 +9,6 @@ import java.util.List;
 
 import br.com.comex.modelo.Categoria;
 import br.com.comex.modelo.Categoria.Status;
-import br.com.comex.modelo.Cliente;
-import br.com.comex.modelo.Cliente.Estados;
 
 public class CategoriaDAO {
 private Connection connection;
@@ -74,6 +72,23 @@ private Connection connection;
 			stm.setString(1, categoriaParaAlterar.getNome());
 			stm.setString(2, categoriaParaAlterar.getStatus().toString());
 			stm.setInt(3, categoriaParaAlterar.getId());
+			stm.execute();
+			stm.close();
+			connection.commit();
+			connection.close();
+		}catch (Exception e) {
+			e.printStackTrace();
+			connection.rollback();
+			System.out.println("ROLLBACK EXECUTADO");
+		}
+	}
+	
+	public void excluirCategoriasInativas() throws SQLException {
+		String sql = "DELETE FROM COMEX.CATEGORIA WHERE STATUS = ?";
+		
+		try(PreparedStatement stm = connection.prepareStatement(sql)) {
+			connection.setAutoCommit(false);
+			stm.setString(1, "INATIVA");
 			stm.execute();
 			stm.close();
 			connection.commit();
