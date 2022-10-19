@@ -30,7 +30,7 @@ public class ItemPedido extends CalculadoraValorTotal implements ValorTotal {
 	}
 	
 	public ItemPedido(int id, double precoUnitario, int quantidade, int produtoId, int pedidoId, double desconto, Desconto tipoDeDesconto) {
-		this.id = count++; 
+		this.id = id;
 		this.precoUnitario = precoUnitario; 
 		this.quantidade = quantidade;
 		this.produtoId = produtoId;

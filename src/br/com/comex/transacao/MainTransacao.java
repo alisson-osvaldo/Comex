@@ -12,7 +12,7 @@ public class MainTransacao {
 	public static void main(String[] args) throws SQLException {
 		
 		try(Connection connection = new ConnectionFactory().getConnection()){
-			InsereProdutoCommand insereProduto = new InsereProdutoCommand("Command", "Testando", 550.50, 2, Tipo.ISENTO, 128, connection);
+			InsereProdutoCommand insereProduto = new InsereProdutoCommand("Command22", "Testando", 550.50, 2, Tipo.ISENTO, 128, connection);
 			insereProduto.execute();
 			connection.close();
 		}catch (Exception e) {
