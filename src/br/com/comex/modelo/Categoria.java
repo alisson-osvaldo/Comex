@@ -12,7 +12,7 @@ public class Categoria {
 	private Status status = Status.ATIVA;
 	private static int count = 1;
 	
-	Categoria() {
+	public Categoria() {
 		super();
 	}
 	
@@ -73,7 +73,6 @@ public Categoria(String nome, Status status, int id) {
 			
 	}
 	public Categoria(String nome, Status status) {
-		this.id = count++;
 		this.nome = nome;
 		this.status = status;
 	}
