@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import br.com.minhas_exececoes.ComexException;
 
-@XmlRootElement
+
 public class Categoria {
 	
 	private int id;
@@ -12,9 +12,6 @@ public class Categoria {
 	private Status status = Status.ATIVA;
 	private static int count = 1;
 	
-	Categoria() {
-		super();
-	}
 	
 	public Categoria(int id, String nome, Status status) {
 		
