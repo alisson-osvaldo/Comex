@@ -40,7 +40,7 @@ public class ComexWS {
 	}
 	
 	
-	@WebMethod(operationName="CadastrarCategoria") 
+	@WebMethod(operationName="cadastrarCategoria") 
 	@WebResult(name="categoria")
 	public Categoria adicionarCategoria(@WebParam(name = "nome")String nome) throws SQLException {
 		Categoria categoria = new Categoria();
@@ -58,7 +58,7 @@ public class ComexWS {
 	}
 	
 	
-	@WebMethod(operationName="TodosOsClientes")
+	@WebMethod(operationName="listarClientes")
 	@WebResult(name="cliente")
 	public List<Cliente> listarClientes()throws SQLException{
 		List<Cliente> listaDeClientes = new ArrayList<Cliente>();
@@ -73,7 +73,7 @@ public class ComexWS {
 	}
 	
 	
-	@WebMethod(operationName="CadastrarCliente") 
+	@WebMethod(operationName="cadastrarCliente") 
 	@WebResult(name="cliente")
 	public Cliente adicionarCliente(
 			@WebParam(name = "nome")String nome, 
@@ -109,7 +109,7 @@ public class ComexWS {
 	}
 	
 	
-	@WebMethod(operationName="TodosOsProdutos")
+	@WebMethod(operationName="listarProdutos")
 	@WebResult(name="produto")
 	public List<Produto> listarProdutos()throws SQLException{
 		List<Produto> listaDeProdutos = new ArrayList<Produto>();

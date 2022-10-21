@@ -42,8 +42,7 @@ public class Categoria {
 		this.id = id;
 		this.nome = nome;
 		this.status = status;	
-		
-			
+					
 	}
 	
 public Categoria(String nome, Status status, int id) {
@@ -109,7 +108,6 @@ public Categoria(String nome, Status status, int id) {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return "\n Categoria " + this.nome + "(" + this.id + "-" + this.status + ")";
 	}
 	

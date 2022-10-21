@@ -70,9 +70,6 @@ public class Cliente {
 			throw new IllegalArgumentException("Nome não pode inicializar com números: " + nome); 
 		}
 		
-//		if (id != count) {
-//			throw new IllegalArgumentException("O id informado é diferente do próximo id "); 
-//		}
 		
 		//CPF
 		String formatcpf = cpf.replaceAll("\\.",""); //remove .
@@ -98,10 +95,6 @@ public class Cliente {
 		
 	}
 	
-	public enum Estados {
-		AC, AL, AP, AM, BA, CE, DF, ES, GO, MA, MT, MS, MG, PA, PB,
-		PR , PE, PI, RJ, RN, RS, RO, RR, SC, SP, SE, TO, TESTE;
-	}
 	
 	public Cliente (int id, String nome, String cpf, String telefone, String rua, String numero,
 			String complemento, String bairro, String cidade, Estados estado) {
@@ -116,7 +109,52 @@ public class Cliente {
 		this.bairro = bairro;
 		this.cidade = cidade;
 		this.estado = estado;
+		
+		
+		if (id != count) {
+		throw new IllegalArgumentException("O id informado é diferente do próximo id "); 
+		}
+		if (id <= 0) {
+			throw new IllegalArgumentException("Error: Id deve ser maior que zero !!!"); 
+		} 
+		if (nome.length() <= 5) {
+			throw new IllegalArgumentException("Error: nome deve ter mais que 5 caracteres !!! \n:");
+		} 
+		if(cpf.length() < 11 || cpf.length() > 16) {
+			throw new IllegalArgumentException("Error: CPF deve ter entre 11 e 14 carácteres !!! \n:");
+		}
+		if(telefone != null) {
+			if (telefone.length() < 11 || telefone.length() > 14) {
+				throw new IllegalArgumentException("Error: Telefone deve ter entre 11 e 16 carácteres !!! \n:");
+			}
+		}
+		if (rua.length() <= 5) {
+			throw new IllegalArgumentException("Error: rua deve ter mais que 5 caracteres !!! \n:");
+		} 
+		if (numero.length() <= 1) {
+			throw new IllegalArgumentException("Error: número deve ter mais que 1 caracteres !!! \n:");
+		} 
+		if (bairro.length() <= 1) {
+			throw new IllegalArgumentException("Error: Bairro deve ter mais que 1 caracteres !!! \n:");
+		} 
+		if (cidade.length() <= 1) {
+			throw new IllegalArgumentException("Error: Cidade deve ter mais que 1 caracteres !!! \n:");
+		} 
+		
+		if (estado == null || estado.toString().length() < 2 || estado.toString().length() > 2) {
+			throw new IllegalArgumentException("Error: Estado deve ter 2 caracteres e não pode ser NULL!!! \n:");
+		}
+		
+		if (!nome.substring(0, 1).matches("[A-Z]*")) {
+			throw new IllegalArgumentException("Nome não pode inicializar com números: " + nome); 
+		}
 	}
+	
+	public enum Estados {
+		AC, AL, AP, AM, BA, CE, DF, ES, GO, MA, MT, MS, MG, PA, PB,
+		PR , PE, PI, RJ, RN, RS, RO, RR, SC, SP, SE, TO, TESTE;
+	}
+	
 	
 	public int getId() {
 		return id;

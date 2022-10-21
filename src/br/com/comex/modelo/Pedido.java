@@ -37,9 +37,6 @@ public class Pedido {
 	public int getCliente_id() {
 		return cliente_id;
 	}
-//	public Date getDatabd() {
-//		return databd;
-//	}
 
 	@Override
 	public String toString() {

@@ -1,11 +1,8 @@
 package br.com.comex.main;
 
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
 
-import br.com.comex.csv.LeitorPedidos;
-import br.com.comex.csv.PedidoCsv;
+import java.util.ArrayList;
+
 import br.com.comex.modelo.Cliente;
 import br.com.comex.modelo.Pedido;
 

@@ -58,6 +58,23 @@ public class Produto extends CalculadoraValorTotal implements ValorTotal{
 		this.precoUnitario = precoUnitario;
 		this.quantidadeEmEstoque = quantidadeEmEstoque;
 		this.categoria = categoria;
+		
+		if (nome.length() <= 5) {
+			throw new IllegalArgumentException("Error: nome deve ter mais que 5 caracteres !!! \n:");
+		} 
+		if (precoUnitario <= 0) {
+			throw new IllegalArgumentException("Error: Preço Unitário igual ou menor que 0 !!!"); 
+		} 
+		if (quantidadeEmEstoque <= 0) {
+			throw new IllegalArgumentException("Error: Quantidade em Estoque deve ser maior que zero !!!"); 
+		} 
+		if (categoria == null ){
+			throw new IllegalArgumentException("Error: Categoria não pode ser NULL !!!"); 
+		} 
+		
+		if (!nome.substring(0, 1).matches("[A-Z]*")) {
+			throw new IllegalArgumentException("Nome não pode inicializar com números: " + nome); 
+		}
 	}
 	
 	public Produto(String nome, String descricao, double precoUnitario, int quantidadeEmEstoque, int categoria_id, Tipo tipo) {
