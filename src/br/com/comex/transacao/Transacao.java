@@ -2,16 +2,16 @@ package br.com.comex.transacao;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.List;
 
 import br.com.comex.factory.ConnectionFactory;
 
 public class Transacao {
 	
-	private List<Command> comandos;
+	//private List<Command> comandos;
+	Command comando;
 	
-	public Transacao(List<Command> comandos) {
-	    this.comandos = comandos;
+	public Transacao(InsereProdutoCommand insereProduto) {
+	    this.comando = insereProduto;
 	  }
 	
 	public void processaComandos() throws Exception {
@@ -19,10 +19,7 @@ public class Transacao {
 		
 		try {
 			conexao.setAutoCommit(false);
-			
-			for (Command comandoDaVez : comandos) {
-		        comandoDaVez.execute();;
-		      }
+		    comando.execute();;
 			conexao.commit();
 		} catch (SQLException e) {
 		      conexao.rollback();
