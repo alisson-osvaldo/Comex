@@ -1,0 +1,1 @@
+docker run -p 8080:8080 comex/comexws:1.1
