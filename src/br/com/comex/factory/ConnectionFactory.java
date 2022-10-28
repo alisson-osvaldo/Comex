@@ -14,6 +14,8 @@ public class ConnectionFactory {
 	public ConnectionFactory() {
 		ComboPooledDataSource comboPooledDataSource = new ComboPooledDataSource();
 		comboPooledDataSource.setJdbcUrl("jdbc:oracle:thin:@172.17.0.2:1522:xe");
+		//comboPooledDataSource.setJdbcUrl("jdbc:oracle:thin:0.0.0.0:@172.17.0.2:1522:xe");
+		//comboPooledDataSource.setJdbcUrl("jdbc:oracle:thin:@0.0.0.0:1522:xe");
 		comboPooledDataSource.setUser("system");
 		comboPooledDataSource.setPassword("admin");
 		

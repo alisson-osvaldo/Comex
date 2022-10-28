@@ -7,14 +7,20 @@
       <xsd:import namespace="http://ws.comex.com.br/" schemaLocation="http://localhost:8080/ComexWS?xsd=1"/>
     </xsd:schema>
   </types>
-  <message name="listarCategorias">
-    <part name="parameters" element="tns:listarCategorias"/>
+  <message name="cadastrarCategoria">
+    <part name="parameters" element="tns:cadastrarCategoria"/>
   </message>
-  <message name="listarCategoriasResponse">
-    <part name="parameters" element="tns:listarCategoriasResponse"/>
+  <message name="cadastrarCategoriaResponse">
+    <part name="parameters" element="tns:cadastrarCategoriaResponse"/>
   </message>
   <message name="SQLException">
     <part name="fault" element="tns:SQLException"/>
+  </message>
+  <message name="listarClientes">
+    <part name="parameters" element="tns:listarClientes"/>
+  </message>
+  <message name="listarClientesResponse">
+    <part name="parameters" element="tns:listarClientesResponse"/>
   </message>
   <message name="cadastrarCliente">
     <part name="parameters" element="tns:cadastrarCliente"/>
@@ -28,23 +34,22 @@
   <message name="listarProdutosResponse">
     <part name="parameters" element="tns:listarProdutosResponse"/>
   </message>
-  <message name="listarClientes">
-    <part name="parameters" element="tns:listarClientes"/>
+  <message name="listarCategorias">
+    <part name="parameters" element="tns:listarCategorias"/>
   </message>
-  <message name="listarClientesResponse">
-    <part name="parameters" element="tns:listarClientesResponse"/>
-  </message>
-  <message name="cadastrarCategoria">
-    <part name="parameters" element="tns:cadastrarCategoria"/>
-  </message>
-  <message name="cadastrarCategoriaResponse">
-    <part name="parameters" element="tns:cadastrarCategoriaResponse"/>
+  <message name="listarCategoriasResponse">
+    <part name="parameters" element="tns:listarCategoriasResponse"/>
   </message>
   <portType name="ComexWS">
-    <operation name="listarCategorias">
-      <input wsam:Action="http://ws.comex.com.br/ComexWS/listarCategoriasRequest" message="tns:listarCategorias"/>
-      <output wsam:Action="http://ws.comex.com.br/ComexWS/listarCategoriasResponse" message="tns:listarCategoriasResponse"/>
-      <fault message="tns:SQLException" name="SQLException" wsam:Action="http://ws.comex.com.br/ComexWS/listarCategorias/Fault/SQLException"/>
+    <operation name="cadastrarCategoria">
+      <input wsam:Action="http://ws.comex.com.br/ComexWS/cadastrarCategoriaRequest" message="tns:cadastrarCategoria"/>
+      <output wsam:Action="http://ws.comex.com.br/ComexWS/cadastrarCategoriaResponse" message="tns:cadastrarCategoriaResponse"/>
+      <fault message="tns:SQLException" name="SQLException" wsam:Action="http://ws.comex.com.br/ComexWS/cadastrarCategoria/Fault/SQLException"/>
+    </operation>
+    <operation name="listarClientes">
+      <input wsam:Action="http://ws.comex.com.br/ComexWS/listarClientesRequest" message="tns:listarClientes"/>
+      <output wsam:Action="http://ws.comex.com.br/ComexWS/listarClientesResponse" message="tns:listarClientesResponse"/>
+      <fault message="tns:SQLException" name="SQLException" wsam:Action="http://ws.comex.com.br/ComexWS/listarClientes/Fault/SQLException"/>
     </operation>
     <operation name="cadastrarCliente">
       <input wsam:Action="http://ws.comex.com.br/ComexWS/cadastrarClienteRequest" message="tns:cadastrarCliente"/>
@@ -56,20 +61,27 @@
       <output wsam:Action="http://ws.comex.com.br/ComexWS/listarProdutosResponse" message="tns:listarProdutosResponse"/>
       <fault message="tns:SQLException" name="SQLException" wsam:Action="http://ws.comex.com.br/ComexWS/listarProdutos/Fault/SQLException"/>
     </operation>
-    <operation name="listarClientes">
-      <input wsam:Action="http://ws.comex.com.br/ComexWS/listarClientesRequest" message="tns:listarClientes"/>
-      <output wsam:Action="http://ws.comex.com.br/ComexWS/listarClientesResponse" message="tns:listarClientesResponse"/>
-      <fault message="tns:SQLException" name="SQLException" wsam:Action="http://ws.comex.com.br/ComexWS/listarClientes/Fault/SQLException"/>
-    </operation>
-    <operation name="cadastrarCategoria">
-      <input wsam:Action="http://ws.comex.com.br/ComexWS/cadastrarCategoriaRequest" message="tns:cadastrarCategoria"/>
-      <output wsam:Action="http://ws.comex.com.br/ComexWS/cadastrarCategoriaResponse" message="tns:cadastrarCategoriaResponse"/>
-      <fault message="tns:SQLException" name="SQLException" wsam:Action="http://ws.comex.com.br/ComexWS/cadastrarCategoria/Fault/SQLException"/>
+    <operation name="listarCategorias">
+      <input wsam:Action="http://ws.comex.com.br/ComexWS/listarCategoriasRequest" message="tns:listarCategorias"/>
+      <output wsam:Action="http://ws.comex.com.br/ComexWS/listarCategoriasResponse" message="tns:listarCategoriasResponse"/>
+      <fault message="tns:SQLException" name="SQLException" wsam:Action="http://ws.comex.com.br/ComexWS/listarCategorias/Fault/SQLException"/>
     </operation>
   </portType>
   <binding name="ComexWSPortBinding" type="tns:ComexWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-    <operation name="listarCategorias">
+    <operation name="cadastrarCategoria">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="SQLException">
+        <soap:fault name="SQLException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="listarClientes">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>
@@ -105,19 +117,7 @@
         <soap:fault name="SQLException" use="literal"/>
       </fault>
     </operation>
-    <operation name="listarClientes">
-      <soap:operation soapAction=""/>
-      <input>
-        <soap:body use="literal"/>
-      </input>
-      <output>
-        <soap:body use="literal"/>
-      </output>
-      <fault name="SQLException">
-        <soap:fault name="SQLException" use="literal"/>
-      </fault>
-    </operation>
-    <operation name="cadastrarCategoria">
+    <operation name="listarCategorias">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>
@@ -226,14 +226,6 @@
   <xs:complexType name="calculadoraValorTotal" abstract="true">
     <xs:sequence/>
   </xs:complexType>
-  <xs:complexType name="listarCategorias">
-    <xs:sequence/>
-  </xs:complexType>
-  <xs:complexType name="listarCategoriasResponse">
-    <xs:sequence>
-      <xs:element name="categoria" type="tns:categoria" minOccurs="0" maxOccurs="unbounded"/>
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="listarClientes">
     <xs:sequence/>
   </xs:complexType>
@@ -254,6 +246,14 @@
       <xs:element name="numero" type="xs:string" minOccurs="0"/>
       <xs:element name="rua" type="xs:string" minOccurs="0"/>
       <xs:element name="telefone" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarCategorias">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="listarCategoriasResponse">
+    <xs:sequence>
+      <xs:element name="categoria" type="tns:categoria" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="cadastrarCliente">
